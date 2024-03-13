@@ -1,0 +1,87 @@
+body {
+    overflow-x: hidden; /* Для блокировки горизонтального скролла */
+    overflow-y: hidden; /* Для блокировки вертикального скролла */
+}
+
+
+/* Обновленные стили для лепестков */
+.petal {
+    position: absolute;
+    background-image: url('Painters/rouse2.png'); /* Изображение для первого типа лепестка */
+    background-size: contain;
+    background-color: transparent; /* Прозрачный фон */
+    width: 35px; /* ширина лепестка */
+    height: 35px; /* высота лепестка */
+    animation: falling 10s linear infinite;
+    opacity: 0; /* Начинаем с прозрачности */
+}
+
+.petal2 {
+    position: absolute;
+    background-image: url('Painters/rouse.png'); /* Изображение для второго типа лепестка */
+    background-size: contain;
+    background-color: transparent; /* Прозрачный фон */
+    width: 30px; /* ширина лепестка */
+    height: 30px; /* высота лепестка */
+    animation: falling 4s linear infinite;
+    opacity: 0; /* Начинаем с прозрачности */
+}
+
+
+.gradient-background {
+    height: 100vh;
+    background: linear-gradient(to bottom, #FFFFFF 0%, #FF69B4 140%);
+}
+
+
+
+@keyframes falling {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+#envelope {
+    position: fixed;
+    top: 25%; /* Позиционируем его выше, чтобы не перекрывать лепестки */
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+#envelope img {
+    width: 80%; /* Изменяем размеры конверта */
+    max-width: 400px; /* Ограничиваем максимальную ширину */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: pink; /* Розовый цвет текста */
+    background-color: rgba(252, 150, 168, 0.85);
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 1px solid rgba(255, 192, 203, 0.1); /* Почти невидимая розовая обводка */
+}
+
+#message:hover {
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+
